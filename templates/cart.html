@@ -1,0 +1,16 @@
+{% include "header.html" %}
+<h2>Your Cart</h2>
+<ul>
+    {% for item in cart_items %}
+    <li>
+        {{ item.product.title }} x {{ item.quantity }} - ${{ item.quantity * item.product.price }}
+        <a href="{{ url_for('remove_cart_item', item_id=item.id) }}">Remove</a>
+    </li>
+    {% endfor %}
+</ul>
+<p>Total: ${{ total }}</p>
+<a href="{{ url_for('get_all_products') }}">Continue Shopping</a>
+<form action="{{ url_for('create_checkout_session')}}" method = "POST">
+    <button type = "submit">Proceed to Checkout</button>
+</form>
+{% include "footer.html" %}

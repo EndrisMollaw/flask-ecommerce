@@ -1,0 +1,39 @@
+{% include "header.html" %}
+<title>Home Page</title>
+<body>
+    <div class = "home-page">
+        <div class="cart-button-top-right">
+            <a href="{{ url_for('view_cart') }}" class="btn btn-primary shadow-lg cart-button-top-right">
+                🛒 View Cart
+                {% if cart_count > 0 %}
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    {{ cart_count }}
+                </span>
+                {% endif %}
+            </a>
+        </div>
+        <h2 class = "main-heading">Pay when you are interested!</h2>
+        <div class = "card-container">
+            {% for product in all_products %}
+                <div class = "card">
+                    <img src = "{{ product.image_path }}" alt = "Card image" class = "card-img">
+                    <div class = "card-content">
+                        <p class = "card-title">{{product.title}}</p>
+                        <p class = "card-description">Price: ${{product.price}}</p>
+                        <p class = "delivery-issue">Delivery: {{product.delivery}}</p>
+                        <a class = "add-to-cart" href = "{{ url_for('add_to_cart', product_id=product.id) }}">Add to cart</a>
+                        {% if current_user.id == 1: %}
+                        <a class = "delete-product" href="{{ url_for('delete_product', product_id=product.id) }}">Delete Product</a>
+                        <a class="edit-product" href="{{ url_for('edit_product', product_id = product.id) }}">Edit Product</a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        {% if current_user.id == 1:%}
+        <a href = "{{ url_for('add_product') }}" class="add-product">Add Product</a>
+        {% endif %}
+    </div>
+
+</body>
+{% include "footer.html" %}

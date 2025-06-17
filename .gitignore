@@ -1,4 +1,1 @@
-.env"*.py[cod]"
-"venv/" 
-".env" 
-"backup_files/" 
+.env

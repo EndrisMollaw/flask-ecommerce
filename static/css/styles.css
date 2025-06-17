@@ -264,3 +264,101 @@ nav{
         text-decoration:none;
         color:white;
     }
+/* Sticky navbar */
+#main-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #333; /* You can change this */
+  color: white;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Shadow effect when scrolling */
+#main-navbar.scrolled {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Push content down to avoid being covered */
+body {
+  padding-top: 80px;
+}
+
+/* Navbar layout */
+.navbar-list .nav-links {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+/* Navbar links */
+.navbar-list .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-list .nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Active link styling */
+.navbar-list .nav-links .active {
+  font-weight: bold;
+  border-bottom: 2px solid white;
+}
+/* Ensure full height layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.page-container {
+  min-height: 100vh; /* full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrap {
+  flex: 1; /* pushes the footer to bottom */
+  padding: 20px;
+}
+
+/* Footer styling */
+.site-footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.site-footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.horizontally-listed {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.horizontally-listed ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.final-foot {
+  text-align: center;
+  margin-top: 20px;
+}

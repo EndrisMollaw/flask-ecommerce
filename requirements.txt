@@ -6,3 +6,4 @@ python-dotenv==1.1.0
 stringify==0.1.1
 tk-tools==0.17.0
 gunicorn
+flask==2.3.2

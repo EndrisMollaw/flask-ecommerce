@@ -4,3 +4,4 @@ iso3166==2.1.1
 pillow==11.1.0
 stringify==0.1.1
 tk-tools==0.17.0
+flask==2.3.2

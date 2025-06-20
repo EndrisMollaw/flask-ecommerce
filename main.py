@@ -16,6 +16,7 @@ from dotenv import load_dotenv
 load_dotenv()
 from forms import AddProductForm, LoginForm, RegisterForm
 
+
 # --- App Config ---
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv("FLASK_SECRET_KEY")
@@ -280,4 +281,5 @@ def cancel():
 
 # --- Run App ---
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+    app.run(debug=True, port = 5000)
+

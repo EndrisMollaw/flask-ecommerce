@@ -5,7 +5,7 @@ from flask_login import LoginManager, login_user, logout_user, login_required, c
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 from flask_ckeditor import CKEditor
-from flask_bootstrap import Bootstrap
+from flask_bootstrap import Bootstrap5
 from flask_gravatar import Gravatar
 from sqlalchemy.orm import relationship, DeclarativeBase, Mapped, mapped_column
 from sqlalchemy import Integer, String, text
@@ -28,7 +28,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 stripe.api_key = os.getenv("STRIPE_API_KEY")
 
 ckeditor = CKEditor(app)
-Bootstrap(app)
+Bootstrap5(app)
 
 # --- Login Manager ---
 login_manager = LoginManager()
